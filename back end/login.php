@@ -1,7 +1,7 @@
 <?php
     include "koneksi.php";
     session_start();
-    //fungsi untuk mengenkripsi password
+    //fungsi untuk memverifikasi password
     function verifyPassword($enteredPassword, $hashedPassword) {
         return password_verify($enteredPassword, $hashedPassword);
     }
