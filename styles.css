@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+  display: flex;
+}
+p {
+      text-indent: 60px;
+    }
+
+/* iini login dan regis form */
+.loginform {
+  position: absolute;
+  width: 30vw;
+  top: 50%;
+  right: 10%;
+  transform: translate(0, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginform h2 {
+  text-align: center;
+  color: #333;
+  border: none;
+}
+
+
+.loginbg {
+	height: 100vh;
+	width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/castle_login_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.loginform button[type="submit"] {
+  width: 100%;
+  background-color: #fff;
+  color: #004792;
+  cursor: pointer;
+  border: 1px solid #004792;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.loginform button[type="submit"]:hover {
+  background-color: #004792;
+  color: white;
+}
+
+/*iinii halaman akun*/
+.popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+#overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+.popup-image {
+      max-width: 100%;
+      height: auto;
+    }
+.tb3 {
+	font-family:poppins;
+	color:white;
+	cursor:pointer;
+}
+.tb3 button[type="submit"] {
+  width: 100px;
+  background-color: #004792;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #004792;
+  border-radius: 10px;
+  padding: 10px;
+}
+.tb3 button[type="submit"]:hover {
+  background-color: #002955;
+  color: white;
+}
+
+.tb1 {
+	font-family:poppins;
+	color:white;
+}
+.tb1 button[type="submit"] {
+  width: 100px;
+  background-color: #004792;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #004792;
+  border-radius: 10px;
+  padding: 10px;
+}
+.tb1 button[type="submit"]:hover {
+  background-color: #002955;
+  color: white;
+}
+.tb2 button[type="submit"] {
+	font-family:poppins;
+  width: 80%;
+  background-color: #6db4ff;
+  color: #004792;
+  cursor: pointer;
+  border: 1px solid #6db4ff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.tb2 button[type="submit"]:hover {
+  background-color: #2f92c9;
+  color: white;
+}
+.sidebar {
+	background-color: #414141;
+    width: 20%;
+    height: 100vh;
+	align-items: center;
+    justify-content: center;
+	text-align: center;
+	color: #fff;
+	font-family: poppins;
+    }
+
+.sidebar menu {
+	color:#fff;
+}
+
+.sidebar menu:hover{
+	color:blue;
+}
+.pp {
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+	align: center;
+}
+
+.pp img {
+	  width: 100%;
+      height: 100%;
+	object-fit: cover;
+}
+
+.logout {
+      color: blue; /* Ganti dengan warna teks yang diinginkan */
+      cursor: pointer;
+    }
+	
+.contentputri {
+      flex: 1;
+      padding: 40px;  
+	background-image: url('img/putri_bg.png');
+	background-size: 90% 100%;
+    }
+	
+.contentpangeran {
+      flex: 1;
+      padding: 40px;  
+	background-image: url('img/pangeran_bg.png');
+	background-size: 90% 100%;
+    }
+
+.contentpangeran table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+	  margin-left:20px;
+	  text-align: center;
+    }
+
+.contentpangeran td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+.contentpangeran th {
+	    border: 1px solid #ddd;
+     padding: 8px;
+     background-color: #004792;
+	    color:#fff;
+    }
+.contentpangeran select{
+	padding: 10px;
+	background-color: #f2f2f2;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.contentpangeran option{
+	padding: 10px;
+	background-color: #f2f2f2;
+	color: #333;
+}
+.putribg {
+	height: 100vh;
+	width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/*homepagee*/
+
+.home {
+  margin: 0;
+  padding: 0;
+  width:100vw;
+}
+		.news {
+			color:red;
+		}
+        .about {
+            background-color: #f2f2f2;
+            padding: 20px;
+			text-align: justify;
+        }
+
+        .cp {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: white;
+			width:100vw;
+			
+        }
+		.home_bg{
+			height: 100vh;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+		}
+		.contenthome {
+			font-family: poppins;
+			text-align: justify;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			margin-top: 20px;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding: 20px;
+		}
+.contenthome table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+			margin-left: 50px;
+			margin-right: 50px;
+        }
+
+.contenthome td {
+    border-bottom: 1px solid #ddd;
+			border:0;
+			margin:0;
+			padding:10px;
+            text-align: center;
+        }
+
+.contenthome th {
+    background-color: #f2f2f2;
+			border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+			border-bottom: 1px solid #ccc;
+        }
+.home table {
+	    margin:0;
+	    border:0;
+    	border-collapse: collapse;
+     width: 100%;
+	    font-family: poppins;
+    }
