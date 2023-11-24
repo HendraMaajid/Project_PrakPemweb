@@ -65,17 +65,17 @@
 			<img src="img/putri_pp.png" alt="PP Putri">
 		</div>
 		Input size <br>
-
+<!-- ini blm ada redirect logutnya -->
 		<a href="logout.php">
 			<img src="img/logout.png" width="100vw">
 		</a>
 	</div>
 	<div class="contentputri">
-
+<!-- kasih fungsitampil nama user -->
 		<h2>Selamat datang, <?php echo $_SESSION['username'];?> </h2>
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                   <h2>masukkan size :
-                  <input type="text" name="size" id="size" pattern="\d+" title="Hanya boleh diisi angka"><br><br></h2>
+                  <input type="number" step="any" name="size" id="size" title="Hanya boleh diisi angka"><br><br></h2>
                     <div class="tb3">
                       <button type="submit" name="submit" onclick="checkAndShowPopup()">Daftar</button>
                     </div>
@@ -94,25 +94,26 @@
               <!-- value=tidakterpilih muncul validasi_kalah.jpg -->
               <script>
                 function checkAndShowPopup() {
-                  var valueFromDatabase = "terpilih";
+                  var sizeFromDatabase = 37.85;
 
-                  if (valueFromDatabase === undefined) {
-                    window.location.href = "inputputri.php";
-                    return;
+                  if (isNaN(sizeFromDatabase)) {
+                    alert("Data input telah tersimpan.");
+
+                  } else {
+                    var popup = document.getElementById("popup");
+                    var overlay = document.getElementById("overlay");
+                    var popupImage = document.getElementById("popupImage");
+
+                    if (sizeFromDatabase === 37.85) {
+                      popupImage.src = "img/validasi_menang.png";
+
+                    } else {
+                      popupImage.src = "img/validasi_kalah.png";
+                    }
+
+                    popup.style.display = "block";
+                    overlay.style.display = "block";
                   }
-
-                  var popup = document.getElementById("popup");
-                  var overlay = document.getElementById("overlay");
-                  var popupImage = document.getElementById("popupImage");
-
-                  if (valueFromDatabase === "terpilih") {
-                    popupImage.src = "img/validasi_menang.png";
-                  } else if (valueFromDatabase === "tidakterpilih") {
-                    popupImage.src = "img/validasi_kalah.png";
-                  }
-
-                  popup.style.display = "block";
-                  overlay.style.display = "block";
                 }
 
                 function hidePopup() {
@@ -122,8 +123,7 @@
                   popup.style.display = "none";
                   overlay.style.display = "none";
                 }
-              </script>
-
+            </script>
 		</form>
 	</div>
 </body>
