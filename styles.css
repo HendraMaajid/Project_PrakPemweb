@@ -212,12 +212,13 @@ input {
     }
 
 .contentpangeran td {
+	background-color: #f0f0f0;
       border: 1px solid #ddd;
       padding: 8px;
     }
 
 .contentpangeran th {
-	    border: 1px solid #ddd;
+	 border: 1px solid #ddd;
      padding: 8px;
      background-color: #004792;
 	    color:#fff;
@@ -252,7 +253,7 @@ input {
 			color:red;
 		}
         .about {
-            background-color: #f2f2f2;
+            background-color: #d6d6d6;
             padding: 20px;
 			text-align: justify;
         }
@@ -261,9 +262,7 @@ input {
             background-color: #333;
             padding: 20px;
             text-align: center;
-            color: white;
-			width:100vw;
-			
+            color: white;	
         }
 		.home_bg{
 			height: 100vh;
@@ -278,8 +277,8 @@ input {
 			align-items: center;
 			background-color: #fff;
 			margin-top: 20px;
-			margin-left: 5%;
-			margin-right: 5%;
+			margin-left: 2%;
+			margin-right: 2%;
 			padding: 20px;
 		}
 .contenthome table {
@@ -299,10 +298,10 @@ input {
         }
 
 .contenthome th {
-    background-color: #f2f2f2;
-			border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+	border-bottom: 1px solid #111111;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 			border-bottom: 1px solid #ccc;
         }
 .home table {

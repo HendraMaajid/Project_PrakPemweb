@@ -2,11 +2,17 @@
     session_start();
     include "koneksi.php";
 
-/*    if (isset($_SESSION['role']) && $_SESSION['role'] != "pangeran") {
+      if (!isset($_SESSION['username'])) {
         header("Location: login.php");
-        exit(); // Ensure that the script stops executing after redirection.
+        exit();
     }
-*/
+
+    // Pengecekan apakah pengguna memiliki role "pangeran"
+    if ($_SESSION['role'] !== 'pangeran') {
+        echo "Akses tidak diizinkan.";
+        exit();
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +29,7 @@
 		<div class="pp">
 			<img src="img/pangeran_pp.png" alt="PP Pangeran">
 		</div>
-		<a href="listputri.php">
+		<a href="viewputri.php">
 		    List Putri
 		</a><br>
 		<a href="inputsayembara.php">

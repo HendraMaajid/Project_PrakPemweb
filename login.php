@@ -17,9 +17,19 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['role'] = $row['role'];
                 if ($row['role'] == "putri") {
-                    header("Location: putri.php");
+                    ?>
+                    <script>
+                        alert("Anda berhasil login");
+                        document.location = "putri.php";
+                    </script>
+                    <?php
                 } else {
-                    header("Location: viewputri.php");
+                    ?>
+                    <script>
+                        alert("Anda berhasil login");
+                        document.location = "viewputri.php";
+                    </script>
+                    <?php
                 }
             } else {
                 ?>

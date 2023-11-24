@@ -1,11 +1,17 @@
 <?php
     include "koneksi.php";
     session_start();
- /*   if (isset($_SESSION['role']) && $_SESSION['role'] != "pangeran") {
+      if (!isset($_SESSION['username'])) {
         header("Location: login.php");
-        exit(); // Ensure that the script stops executing after redirection.
+        exit();
     }
-*/
+
+    // Pengecekan apakah pengguna memiliki role "pangeran"
+    if ($_SESSION['role'] !== 'pangeran') {
+        echo "Akses tidak diizinkan.";
+        exit();
+    }
+
     $id_sayembara = $_GET['id_update'];
     $sql = "SELECT * FROM sayembara WHERE id_sayembara = '$id_sayembara'";
     $query = mysqli_query($conn, $sql);
@@ -47,13 +53,13 @@
 		<a href="inputsayembara.php">
 		    Tambah Sayembara
 		</a ><br>
-<!-- ini blm ada redirect logutnya -->
+
 		<a href="logout.php">
 			<img src="img/logout.png" width="100vw">
 		</a>
 	</div>
 	<div class="contentpangeran">
-<!-- kasih fungsitampil nama user -->
+
 		<h2><u>Update sayembara</u></h2>
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<h3>id_sayembara &nbsp : &nbsp
@@ -65,7 +71,7 @@
 			<h3>status &nbsp : &nbsp
 			<select name="status" id="status">
 				 <?php
-                    if($data['status']=="on going"){
+                    if($data['status']=="On going"){
                         echo "<option value='On going' selected>On going</option>";
                         echo "<option value='End'>End</option>";
                     }else{

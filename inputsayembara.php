@@ -3,9 +3,15 @@
     include "koneksi.php";
 
 
-    if (isset($_SESSION['role']) && $_SESSION['role'] != "pangeran") {
+      if (!isset($_SESSION['username'])) {
         header("Location: login.php");
-        exit(); // Ensure that the script stops executing after redirection.
+        exit();
+    }
+
+    // Pengecekan apakah pengguna memiliki role "pangeran"
+    if ($_SESSION['role'] !== 'pangeran') {
+        echo "Akses tidak diizinkan.";
+        exit();
     }
     if(isset($_POST['submit'])){
         $id_sayembara = $_POST['id_sayembara'];
@@ -38,19 +44,19 @@
 		<div class="pp">
 			<img src="img/pangeran_pp.png" alt="PP Pangeran">
 		</div>
-		<a href="listputri.php">
+		<a href="viewputri.php">
 		    List Putri
 		</a> <br>
-		<a href="tambahsayembara.php">
+		<a href="inputsayembara.php">
 		    Tambah Sayembara
 		</a ><br>
-<!-- ini blm ada redirect logutnya -->
+
 		<a href="logout.php">
 			<img src="img/logout.png" width="100vw">
 		</a>
 	</div>
 	<div class="contentpangeran">
-<!-- kasih fungsitampil nama user -->
+
 		<h2>Inputan sayembara</h2>
 	<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 		<h2>id_sayembara :

@@ -1,9 +1,15 @@
 <?php
     include "koneksi.php";
     session_start();
-    if (isset($_SESSION['role']) && $_SESSION['role'] != "pangeran") {
+      if (!isset($_SESSION['username'])) {
         header("Location: login.php");
-        exit(); // Ensure that the script stops executing after redirection.
+        exit();
+    }
+
+    // Pengecekan apakah pengguna memiliki role "pangeran"
+    if ($_SESSION['role'] !== 'pangeran') {
+        echo "Akses tidak diizinkan.";
+        exit();
     }
     $id_putri = $_GET['id_update'];
     $read ="SELECT * FROM putri WHERE id_putri = '$id_putri'";
@@ -54,13 +60,13 @@
 		<a href="inputsayembara.php">
 		    Tambah Sayembara
 		</a ><br>
-<!-- ini blm ada redirect logutnya -->
+
 		<a href="logout.php">
 			<img src="img/logout.png" width="100vw">
 		</a>
 	</div>
 	<div class="contentpangeran">
-<!-- kasih fungsitampil nama user -->
+
 		<h2><u>Update Putri</u></h2>
 		<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<h3>id_putri &nbsp : &nbsp
