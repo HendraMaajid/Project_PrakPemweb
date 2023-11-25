@@ -28,23 +28,10 @@
                 alert("Anda sudah menginputkan ukuran sepatu sebelumnya. Hanya boleh satu kali.");
             </script>
             <?php
-        }else{
-
+        }else {
+            $showPopup = true; // Set a flag to show the popup
             $sql = "INSERT INTO sepatu (size, id_putri) VALUES ('$size', '$id_putri')";
             $query = mysqli_query($conn, $sql);
-            if($query){
-                ?>
-                <script>
-                    alert("Anda berhasil memasukkan data");
-                </script>
-                <?php
-            }else{
-                ?>
-                <script>
-                    alert("Anda gagal memasukkan data");
-                </script>
-                <?php
-            }
         }
     }
     
@@ -77,45 +64,36 @@
                   <h2>masukkan size :
                   <input type="number" step="any" name="size" id="size" title="Hanya boleh diisi angka"><br><br></h2>
                     <div class="tb3">
-                      <button type="submit" name="submit" onclick="checkAndShowPopup()">Daftar</button>
+                      <button type="submit" name="submit">Daftar</button>
                     </div>
                     
                     
                     
-              <!-- Pop-up dan overlay -->
-              <div class="popup-container" id="popup">
-                <img src="" class="popup-image" id="popupImage">
-              </div>
-              <div id="overlay" onclick="hidePopup()"></div>
-
+        <!-- Pop-up dan overlay -->
+            <div id="overlay" onclick="hidePopup()"></div>
+            <div id="popup">
+              <img src="" id="popupImage" alt="Popup Image">
+            </div>
               <!-- Javascript popup -->
-              <!-- blm daftar diarahin ke inputputri.php-->
-              <!-- value=terpilih muncul validasi_menang.jpg -->
-              <!-- value=tidakterpilih muncul validasi_kalah.jpg -->
-              <script>
-                function checkAndShowPopup() {
-                  var sizeFromDatabase = 37.85;
-
-                  if (isNaN(sizeFromDatabase)) {
-                    alert("Data input telah tersimpan.");
-
-                  } else {
+              <?php if (isset($showPopup) && $showPopup): ?>
+                <script>
                     var popup = document.getElementById("popup");
                     var overlay = document.getElementById("overlay");
                     var popupImage = document.getElementById("popupImage");
 
-                    if (sizeFromDatabase === 37.85) {
-                      popupImage.src = "img/validasi_menang.png";
-
-                    } else {
-                      popupImage.src = "img/validasi_kalah.png";
-                    }
+                    <?php if ($size == 37.85): ?>
+                        popupImage.src = "img/validasi_menang.png";
+                    <?php else: ?>
+                        popupImage.src = "img/validasi_kalah.png";
+                    <?php endif; ?>
 
                     popup.style.display = "block";
                     overlay.style.display = "block";
-                  }
-                }
+                </script>
+            <?php endif; ?>
 
+
+              <script>
                 function hidePopup() {
                   var popup = document.getElementById("popup");
                   var overlay = document.getElementById("overlay");

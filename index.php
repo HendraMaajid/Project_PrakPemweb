@@ -30,9 +30,13 @@ $query = mysqli_query($conn, $read);
 		 <td style="text-align:left; color:#fff; font-size:20px;">
 			<h1>&nbsp Cinderella Seeker</h1>
 		</td>
-	<!-- <th style="align:right"><h3><a href="#">Home</a></h3></th>
-		 <th style="align:right"><h3><a href="#about">About</a></h3></th>
-	--> <td>
+		<td >
+			<h3><a href="#">Home</a></h3>
+		</td>
+		<td >
+			<h3><a href="#about">About</a></h3>
+		</td>
+		<td>
 			<form action="login.php" method"post">
 				<div class="tb2">
 					<button type="submit" name="submit">L O G I N</button>
@@ -41,12 +45,12 @@ $query = mysqli_query($conn, $read);
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="4">
 			<img class="home_bg" src="img/home_bg_1.png">
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="4">
 	<!--	<img class="home_bg" src="home_bg_2.png"> -->
 			<div class="contenthome">
 				<h2>Cinderella Seeker  
@@ -56,17 +60,18 @@ $query = mysqli_query($conn, $read);
 			 <table>
 				<thead>
 						<th>Daerah</th>
-						<th>Status</th>
+						<th style="text-align:center">Status</th>
 						<th></th>
 				</thead>
 				<tbody>
-				<?php
+	<!-- list sayembara, button belum ada href nya (class=tb1 itu style button -->
+					<?php
 					while ($row = mysqli_fetch_array($query)) {
 						?>
 						<tr>
 							<td><?php echo $row['daerah']; ?></td>
-							<td><?php echo $row['status']; ?></td>
-							<td>
+							<td  style="text-align:center"><?php echo $row['status']; ?></td>
+							<td style="text-align:center">
 								<?php if ($row['status'] == 'On going') { ?>
 									<form action="index.php" method="post">
 										<input type='hidden' name='id_sayembara' value="<?php echo $row['id_sayembara']; ?>">
@@ -88,8 +93,8 @@ $query = mysqli_query($conn, $read);
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
-			<div class="about">
+		<td colspan="4">
+			<div class="about" id="about">
 				<h3><u>about</u></h3>
 				<p>Di sebuah kerajaan yang jauh, hiduplah seorang gadis muda bernama Cinderella. Setelah ibunya meninggal, ayah Cinderella menikah lagi dengan seorang wanita jahat yang memiliki dua anak perempuan, Anastasia dan Drizella. Mereka semua tinggal bersama dalam istana yang megah. Cinderella adalah anak tiri yang baik hati, tetapi dia sering diperlakukan dengan tidak adil oleh ibu tiri dan kedua saudara tirinya. Dia dipaksa untuk melakukan pekerjaan rumah tangga dan tidur di ruang atas, sementara saudara-saudaranya menikmati kemewahan istana.</p>
 				<p>Suatu hari, kabar datang bahwa pangeran akan mengadakan pesta dansa di istana untuk mencari pasangan hidup. Cinderella bermimpi untuk menghadiri pesta tersebut, tetapi ibu tiri dan saudara-saudaranya tidak mengizinkannya. Namun, dengan bantuan peri baik hati, Cinderella diberi gaun indah dan sepatu kaca yang cantik. Di pesta, Cinderella menawan hati pangeran dengan kecantikannya dan kebaikannya. Mereka berdua menghabiskan waktu bersama, tetapi Cinderella harus kembali sebelum tengah malam, seperti yang diperintahkan oleh peri. Saat melarikan diri, Cinderella kehilangan salah satu sepatu kacanya.</p>
@@ -98,7 +103,7 @@ $query = mysqli_query($conn, $read);
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="4">
 			<div class="cp">
 				<h3>Contact Pangeran: 085746982134</h3>
 			</div>

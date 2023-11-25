@@ -35,13 +35,16 @@
 		<a href="inputsayembara.php">
 		    Tambah Sayembara
 		</a ><br>
-
+		<a href="viewsayembara.php">
+		    View Sayembara
+		</a ><br>
+<!-- ini blm ada redirect logutnya -->
 		<a href="logout.php">
 			<img src="img/logout.png" width="100vw">
 		</a>
 	</div>
 	<div class="contentpangeran">
-
+<!-- kasih fungsitampil nama user -->
 		<h2>Selamat datang, <?php echo $_SESSION['username'];?></h2>
 		<table>
 		    <thead>
