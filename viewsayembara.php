@@ -75,7 +75,7 @@
 		    </tbody>
 		</table>
 		<br><br>
-		<form action="tambahsayembara.php" method="post">
+		<form action="inputsayembara.php" method="post">
 		    <div class="tb1">
 				<button type="submit">Tambah</button>
 			</div>
