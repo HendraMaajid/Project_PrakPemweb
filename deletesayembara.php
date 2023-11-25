@@ -1,4 +1,5 @@
 <?php
+    //file delete sayembara
     include "koneksi.php";
     $id_sayembara = $_GET['id_delete'];
     $sql = "DELETE FROM sayembara WHERE id_sayembara = '$id_sayembara'";

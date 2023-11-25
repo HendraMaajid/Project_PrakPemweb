@@ -1,4 +1,5 @@
 <?php
+    //file delete putri
     include "koneksi.php";
     session_start();
     $id_putri = $_GET['id_delete'];
