@@ -63,7 +63,7 @@
 		<h2>Inputan sayembara</h2>
 	<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 		<h2>id_sayembara :
-		<input type="text" name="id_sayembara" id="id">
+		<input type="text" name="id_sayembara" id="id" maxlength="2">
 		</h2><br>
 		<h2>daerah :
 		<input type="text" name="daerah" id="daerah">
